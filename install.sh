@@ -1,1 +1,1 @@
-cp -r ./.config/ ./.local/ ./themes $HOME -f
+cp -r ./.config/ ./.local/ ./.themes $HOME -f
