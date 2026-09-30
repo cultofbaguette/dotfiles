@@ -1,0 +1,9 @@
+[General]
+ColorScheme=CatppuccinMochaMauve
+TerminalApplication=kitty
+
+[Icons]
+Theme=breeze
+
+[KDE]
+widgetStyle=Breeze
