@@ -15,7 +15,7 @@
   normal-background:           @base;
   selected-urgent-background:  @red;
   alternate-active-background: @pink;
-  spacing:                     2;
+  spacing:                     0.5em;
   alternate-normal-foreground: @text;
   urgent-background:           @red;
   selected-normal-foreground:  @base;
@@ -24,20 +24,40 @@
   selected-active-background:  @mauve;
   active-background:           @pink;
   selected-normal-background:  @mauve;
-  alternate-normal-background: @mantle;
+  alternate-normal-background: @base;
   foreground:                  @text;
   selected-urgent-foreground:  @text;
   normal-foreground:           @text;
-  alternate-urgent-foreground: @red;
+  alternate-urgent-foreground: @text;
   alternate-active-foreground: @base;
+  font : "JetBrains Mono 12";
 
 }
+
+
+
+
 element {
-  padding: 1px ;
-  cursor:  pointer;
-  spacing: 5px ;
-  border:  0;
+  children: [ textbox-marker, element-text ];
 }
+
+
+
+textbox-marker {
+    padding:0 0.25em;
+    content: ">";
+    expand: false;
+    vertical-align: 0.5;
+    text-color: @base;
+    background-color:transparent;
+    color:transparent;
+}
+
+textbox-marker selected{
+    background-color: @mauve;
+    color:@base;
+}
+
 element normal.normal {
   background-color: @normal-background;
   text-color:       @normal-foreground;
@@ -84,22 +104,21 @@ element-text {
 }
 element-icon {
   background-color: transparent;
-  size:             1.0000em ;
+  size:             0.0000em ;
   cursor:           inherit;
   text-color:       inherit;
 }
 window {
-  padding:          5;
+  padding:          0.5em;
   background-color: @background;
-  border:           2;
-  width: 20%;
+  border:           2px;
+  width: 33em;
+  height: 25em;
   border-radius: 0;
-  children : ["inputbar","message","listview","mode-switcher"];
+  children : ["message","listview","inputbar"];
 }
 mainbox {
   padding: 0;
-  border:  0;
-  spacing: 1%;
 }
 message {
   padding:      0.5em 1em ;
@@ -112,12 +131,11 @@ textbox {
   text-color: @foreground;
 }
 listview {
-  padding:      0.5em 0.5em;
-  scrollbar:    true;
+  padding:      0.4em 0.4em;
+  scrollbar:    false;
   border-color: @separatorcolor;
-  spacing:      2px ;
   fixed-height: 0;
-  border : 0px;
+  border : 2px;
   columns: 1;
 }
 scrollbar {
@@ -134,7 +152,6 @@ sidebar {
 }
 button {
   cursor:     pointer;
-  spacing:    0;
   text-color: @normal-foreground;
 }
 button selected {
@@ -157,24 +174,19 @@ textbox-num-sep {
 inputbar {
   border: 2px;
   padding:    0.5em 1em ;
-  spacing:    0px ;
   text-color: @normal-foreground;
   children:   ["prompt","textbox-prompt-colon","entry","num-filtered-rows","textbox-num-sep","num-rows","case-indicator" ];
 }
 case-indicator {
-  spacing:    0;
   text-color: @normal-foreground;
 }
 entry {
   text-color:        @normal-foreground;
   cursor:            text;
-  spacing:           0;
   placeholder-color: @overlay0;
 }
 prompt {
-  spacing:    0;
   text-color: @normal-foreground;
-    
 }
 textbox-prompt-colon {
   margin:     0px 0.3000em 0.0000em 0.0000em ;

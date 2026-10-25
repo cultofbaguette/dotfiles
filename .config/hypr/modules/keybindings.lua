@@ -29,15 +29,14 @@ hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("kbuildsycoca6 & dolphin"))
 -- Menus
 
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("rofi -show drun"))
-hl.bind(
-	mainMod .. " + C",
-	hl.dsp.exec_cmd("rofi -modi clipboard:$HOME/.config/rofi/scripts/cliphist-rofi-img -show clipboard -show-icons")
-)
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
 hl.bind(mainMod .. " + PERIOD", hl.dsp.exec_cmd(" rofi -modi emoji -show emoji"))
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("rofi -show power-menu -modi power-menu:$HOME/.local/bin/rofi-power-menu"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("rofi -show power-menu -modi power-menu:rofi-power-menu"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd('rofi -modi "calc,emoji,filebrowser" -show calc'))
 
 -- Window Commands
+
+hl.bind(mainMod .. " + Z", hl.dsp.window.tag({ tag = "transparent" }))
 
 hl.bind(mainMod .. " + TAB", hl.dsp.window.cycle_next())
 
@@ -84,10 +83,6 @@ hl.bind(mainMod .. " + ALT + down", hl.dsp.window.swap({ direction = "down" }))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot -m region -s"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m output -s"))
 hl.bind(mainMod .. " + CTRL + S", hl.dsp.exec_cmd("hyprshot -m window -s"))
-
-hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m region -s"))
-hl.bind("SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m output -s"))
-hl.bind("CTRL + Print", hl.dsp.exec_cmd("hyprshot -m window -s"))
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind(

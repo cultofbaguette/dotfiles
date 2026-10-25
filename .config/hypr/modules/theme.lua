@@ -35,13 +35,13 @@ local crust = "rgb(11111b)"
 
 hl.config({
 	general = {
-		gaps_in = 1,
-		gaps_out = 5,
+		gaps_in = 2,
+		gaps_out = 4,
 
 		border_size = 2,
 
 		col = {
-			active_border = { colors = { mauve, pink }, angle = 45 },
+			active_border = { colors = { mauve, mauve }, angle = 45 },
 			inactive_border = surface0,
 		},
 

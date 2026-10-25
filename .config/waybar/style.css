@@ -1,98 +1,54 @@
 @import url("../colors/mocha.css");
 
 * {
-    font-family:
-        "JetBrainsMono Nerd Font";
-    font-size: 18px;
-}
-
-tooltip {
-	background-color: @base;
+  font-family:
+      "JetBrainsMono Nerd Font";
+  font-size: 18px;
 	border-radius: 0px;
-	color: @text;
-	border-color: @surface0;
-	border-width: 2px;
+  color: @text;
+  background-color: @base;
 }
 
-tooltip * {
-	color: @text;
-}
-
-
-
-window#waybar {
+window#waybar,
+window#waybar > *,
+.modules-left,
+.modules-right,
+.modules-left > *,
+.modules-right > *{
     background-color: transparent;
-    color: #ffffff;
-    border-radius: 0;
-    transition-property: background-color;
-    transition-duration: 0.5s;
 }
 
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    /* Avoid rounded borders under each button name */
     border: solid;
     border-color: @surface0;
-    border-width: 2px;
-    margin: 0 2;
-    border-radius: 0;
+    border-width : 2px;
+    padding: 0 8px;
+    margin:0 2px;
+    transition : none;
+    animation : none;
 }
 
 #workspaces button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
 }
-#workspaces button {
-    padding: 0 10px;
-    background-color: transparent;
-    color: @text;
-}
 
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0);
-}
-
-#workspaces button.focused {
-    background-color: @lavender;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces button.active {
-    color: @base;
+#workspaces button.active,
+#workspaces button.active *{
     background-color: @text;
     border-color: @text;
+    color: @base;
 }
 
-#workspaces button.urgent {
+#workspaces button.urgent,
+#workspaces button.urgent *{
     background-color: @red;
+    color: @base;
+    border-color: @red;
 }
 
-#mode {
-    background-color: #64727d;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#battery,
-#cpu,
-#memory,
-#temperature,
-#network,
-#hardware,
-#pulseaudio,
-#custom-notification,
-#mpris,
-#bluetooth,
-#clock {
+#hardware * {
     padding: 0 4px;
-    color: @text;
-}
-
-.modules-right {
-    background-color: transparent;
-}
-
-.modules-left {
-    background-color: transparent;
 }
 
 #hardware,
@@ -101,38 +57,29 @@ button {
 #clock,
 #mpris,
 #network,
-#custom-notification {
+#custom-notification,
+.modules-center{
     border: solid;
     border-color: @surface0;
     border-width: 2px;
-    border-radius: 0;
-    padding: 5px 10px;
+    padding: 4px 8px;
 }
 
-.modules-center {
-    background-color: @base;
-    border-radius: 0;
-    padding: 5px 5px;
-    border: solid;
-    border-color: @surface0;
-    border-width: 2px;
+#hardware{
+    padding: 4px;
 }
 
-#bluetooth{
-  background-color:@base;
+.modules-center{
+  padding:4px 2px;
 }
 
-#pulseaudio {
-  background-color:@base;
+.modules-right > * > *{
+  margin: 0 0 0 4px;
+}
+.modules-left > * > *{
+  margin: 0 4px 0 0;
 }
 
-#network {
-  background-color:@base;
-}
-
-#battery{
-  background-color:@base;
-}
 
 #battery.charging,
 #battery.plugged {
@@ -153,27 +100,4 @@ button {
     animation-timing-function: steps(12);
     animation-iteration-count: infinite;
     animation-direction: alternate;
-}
-
-label:focus {
-    background-color: #000000;
-}
-
-#hardware {
-    background-color: @base;
-}
-
-#mpris,
-#network,
-#bluetooth{
-    background-color: @base;
-    margin: 0 5px;
-}
-
-#custom-notification {
-    background-color: @base;
-}
-
-#clock {
-    background-color: @base;
 }

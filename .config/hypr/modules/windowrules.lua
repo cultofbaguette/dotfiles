@@ -1,7 +1,7 @@
 hl.window_rule({
 	name = "transparency",
 	match = {
-		class = "kitty|org.kde.dolphin",
+		tag = "transparent",
 	},
-	opacity = 0.9,
+	opacity = 0.95,
 })
