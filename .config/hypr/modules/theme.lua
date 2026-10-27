@@ -73,10 +73,6 @@ hl.config({
 			vibrancy = 0.9,
 		},
 	},
-
-	animations = {
-		enabled = true,
-	},
 })
 
 hl.config({
