@@ -81,11 +81,9 @@ export "MICRO_TRUECOLOR=1"
 
 
 plugins=(
-	zsh-bat
 	zsh-syntax-highlighting
   zsh-autosuggestions
   archlinux
-  you-should-use
 )
 
 
